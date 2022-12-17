@@ -11,7 +11,7 @@
 x = int(input('введите число x = '))
 y = int(input('введите число y = '))
 
-if x==0 and y==0:
+if x==0 or y==0:
     print('введите правильное число')
 elif x > 0 and y > 0:
      print('Четверь 1')

@@ -11,7 +11,7 @@ y1 = int(input('y1 = '))
 x2 = int(input('х2 = '))
 y2 = int(input('y2 = '))
 
-leng =  (((x2-x1)**2 + (y2-y1)**2))**0.5
-print(leng)
+leng = (((x2-x1)**2 + (y2-y1)**2))**0.5
+# print(leng)
 
- 
+print('Раccтояние = {:.3}'.format(leng))
