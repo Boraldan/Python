@@ -3,16 +3,15 @@
 # - 6782 -> 23
 # - 0,56 -> 11
 
-num = input('введите число 1 = ')
+num = input('введите число = ')
 
-size = len(num) 
-num = float(num)
-
-i = 1
-if num < 1: 
-    while i < size-1:
-        num*=10
-        i= i+1
+if "." in num:
+    size = len(num)-num.find('.')
+    num = float(num)
+    i = 1
+    while i < size:
+            num*=10
+            i= i+1
 
 num = int(num)
 sum = 0
