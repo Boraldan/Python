@@ -4,7 +4,7 @@
 N = int(input('введите число = '))
 
 num = 1
-for el in range(1,N+1):
+for el in range(2,N+1):
     num *= el
 
 print(num)

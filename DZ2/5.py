@@ -8,8 +8,7 @@ list = list(range(0,N))
 
 for el in range(0,N):
     i = random.randint(0, N-1)
-    j = random.randint(0, N-1)
-    list[i], list[j] = list[j], list[i]
+    list[i], list[el] = list[el], list[i]
 
 print(f"{list}")
 

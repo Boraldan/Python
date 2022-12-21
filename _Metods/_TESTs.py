@@ -25,10 +25,10 @@
 
 
 
+number = input('Введите число дробное или больше 10: ')
+sumDigits = 0
 
-def convert1(x):
-   return ((((9/5)*x + 32)*100)/100) 
-
-
- 
-print(convert1(13))
+for item in number:
+    if item.isdigit():
+        sumDigits += int(item)
+print(sumDigits)
