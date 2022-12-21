@@ -25,10 +25,4 @@
 
 
 
-number = input('Введите число дробное или больше 10: ')
-sumDigits = 0
-
-for item in number:
-    if item.isdigit():
-        sumDigits += int(item)
-print(sumDigits)
+ 

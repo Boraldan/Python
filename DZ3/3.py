@@ -29,6 +29,9 @@ for num in my_L:
     if N < min:
         min = N
 
-print(f'Разница между {max} - {min}  = {max - min}')
+
+print(f'Разница между {max} - {min}  = {round(max - min, 2)}')
+
+
 
 

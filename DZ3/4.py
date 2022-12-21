@@ -16,4 +16,10 @@ while d > 0:
         d = (d-1)//2
         bi_L.append(1)
 
-print(list(reversed(bi_L)))
+temp = list(reversed(bi_L))
+
+bi_num = ""
+for el in temp:
+    bi_num += str(el)
+
+print(f'Двоичное число = {bi_num}')

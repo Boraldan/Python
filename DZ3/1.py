@@ -18,7 +18,7 @@ def sum_od (in_list):
         sum += int(in_list[i])
     return sum
 
-N = int(input('введите число = '))
+N = int(input('введите размер списка = '))
 
 new_list = get_list(N)
 
