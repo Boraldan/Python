@@ -34,4 +34,9 @@ for item in number:
 print(sumDigits)
 
 
-# --------------------------
+#  задаем округление float--------------------------
+
+str = '6.759104'
+number = float(str)
+result = '{:.4f}'.format(number)
+print(result)

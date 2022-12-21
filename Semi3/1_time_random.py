@@ -2,5 +2,6 @@
 
 import time
 
-seconds = time.time()
-print(int((seconds*100000)%100))
+ 
+numer = float((((time.time())*10000000)%1000)/100)
+ 
