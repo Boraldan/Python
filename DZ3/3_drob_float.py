@@ -20,9 +20,10 @@ min = 1
 for num in my_L:
     num = str(num)
     if "." in num:
-        size = num.find('.')
-        d = len(num)-num.find('.') - 1
-        N = float(num[size+1:]) / 10**d
+        index_point = num.find('.')
+        # d = len(num)-num.find('.') - 1
+        # N = float(num[index_point+1:]) / 10**d
+        N = float(num[index_point:])
     
     if N > max:
         max = N

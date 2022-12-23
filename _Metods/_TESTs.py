@@ -23,6 +23,6 @@
 # colors.remove('red') 
 # del colors[0] # удалить элемент   
 
-
-
+# проверка  верного ввода int (на числа с минусом учтена):
+# while not (num.isdigit() or num[0] == '-' and  num[1:].isdegit()):
  
