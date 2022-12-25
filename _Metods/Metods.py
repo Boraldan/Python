@@ -5,15 +5,22 @@ while original !=0:
     original //=10
 print(inverted) # 32
 
+#  задать списко вручную --------------------
 
 def get_numbers(num):              
     my_list = []
     for i in range(num):
         my_list.append(int(input('Введите число: ')))
     return my_list
-    
-my_list = get_numbers(3)
 
+#  задать списко произвольный нужного размера --------------------
+ def get_arr(num):              
+    my_L = []
+    for i in range(num):
+        my_L.append(random.randint(1,11))
+    return my_L
+
+# функции работы со списком  -----------------------
 
 colors = ['red', 'green', 'blue']
 for e in colors:
@@ -40,3 +47,13 @@ str = '6.759104'
 number = float(str)
 result = '{:.4f}'.format(number)
 print(result)
+
+
+# Проверка ввода на число int ---------------
+def check_int():
+    num = input('введите число  = ')
+    while not num.isdigit():
+        num = input("Введите верное число = ")
+    return int(num)
+
+print(check_int())

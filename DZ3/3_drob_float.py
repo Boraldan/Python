@@ -14,7 +14,7 @@ for i in range(leng):
 
 print(my_L)
 
-max = 0
+max = 0  #   искать 
 min = 1
 
 for num in my_L:
@@ -31,8 +31,34 @@ for num in my_L:
         min = N
 
 
-print(f'Разница между {max} - {min}  = {round(max - min, 2)}')
+print(f'Разница между {max} - {min}  = {max - min}')
 
 
 
+
+
+# -------------------------------------
+
+# import random
+# from random import randint
+# import os
+# os.system('cls')
+
+
+# s = []
+# s1 = []
+# for i in range(randint(2, 10)):
+#     num = random.uniform(0, 10)
+#     s.append(round(num, 2))
+#     num1 = s[i] % 1
+#     s1.append(round(num1, 2))
+
+# print("Случайно заданный список из вещественных чисел : ")
+# print()
+
+# print(s)
+# print(s1)
+# print()
+# res = max(s1) - min(s1)
+# print("Разница между максимальным и минимальным значением дробной части : ", res)
 

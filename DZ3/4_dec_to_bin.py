@@ -23,3 +23,16 @@ for el in temp:
     bi_num += str(el)
 
 print(f'Двоичное число = {bi_num}')
+
+
+#------------------------- ниже хорошее решение
+
+
+i = int(input('Input decimal number and I will convert it to binary: '))
+
+string = ''
+while i != 0:
+    left = i % 2
+    string = str(left) + string 
+    i //= 2
+print(f'This is a binary number: {string}')

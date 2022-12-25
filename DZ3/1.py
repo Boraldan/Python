@@ -24,3 +24,15 @@ new_list = get_list(N)
 
 print(f'{new_list}')
 print(sum_od(new_list))
+
+
+
+# sum( и указываем список с цифрами)
+# l = int(input('Введите длину списка: '))
+# ls = [rand.randint(1,50) for i in range(l)]
+
+# new_ls = ls[1:l:2]
+# sum_nefw_ls = sum(new_ls)
+# print(ls)
+# print(new_ls)
+# print(f'Сумма чисел на нечетных позициях равна: {sum_nefw_ls }')
