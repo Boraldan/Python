@@ -26,7 +26,7 @@ def K_str(k):
     return mn
 
 def w_file(in_str):
-    with open('DZ4\\file.txt', 'w') as data:   # закроет соединение автоматически с файлом
+    with open('DZ4\\task4_file.txt', 'w') as data:   # закроет соединение автоматически с файлом
         data.write(in_str)
 
 def main():
