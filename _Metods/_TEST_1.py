@@ -1,5 +1,4 @@
 
-
 path = "DZ4\\task_5\\file1.txt"
 data = open(path, 'r')
 for line in data:
@@ -15,21 +14,20 @@ data.close()
 print('Первый многочлен : ' + myL1)
 print('Второй многочлен : ' + myL2)
 
-myL1 = myL1.split( )
+myL1 = myL1.split()
 myL2 = myL2.split()
-
 
 if 'x**' in myL1[0]:
     N = myL1[0].find('x') + 2
     t = myL1[0]       # выделяем отдельную переменную из списка
     n = int(t[N+1:])  # степень 
-    A = int(t[:N-3])  # коофициент 
-
 else:
     n = 1
-    print(n)
 
-while n > 1:
+count1 = 0
+count2 = 0
+
+while n > 0:
     for i1, el1 in enumerate(myL1):
         for i2, el2 in enumerate(myL2):
             if 'x**' + str(n) in el1 and 'x**' + str(n) in el2:
@@ -38,7 +36,7 @@ while n > 1:
                     N2 = el2.find('x')
                     A2 = int(el2[:N2-1])  # коофициент 
                     temp = str(A1+A2) + '*x**' + str(n)
-                    n = n - 1
+                    # n = n - 1
                     myL1[i1] = temp
                     # print(temp)
             elif el1[-1:] == 'x' and el2[-1:] == 'x':
@@ -47,21 +45,27 @@ while n > 1:
                     N2 = el2.find('x')
                     A2 = int(el2[:N2-1])  # коофициент 
                     temp = str(A1+A2) + '*x'
-                    myL1[i1] = temp
+                    if count1 == 0:
+                        myL1[i1] = temp
+                        count1 +=1
+                    # n = n - 1
                     # print(temp)
             elif  (el1.isdigit() and int(el1) > 0) and (el2.isdigit() and int(el2) > 0) :
                     temp = int(el1) + int(el2)
-                    myL1[i1] = str(temp)
-                    # print(temp)
+                    if count2 == 0:
+                        myL1[i1] = str(temp)
+                        count2 +=1
+    n = n - 1
 
 
-# myL1 = str(myL1)
-
-print(myL1)
 
 newL = ''
 
 for el in myL1:
     newL += str(el) + ' '
 
-print(newL)
+print('Итоговый многочлен: ' + newL)
+
+# with open('DZ4\\task_5\\task5_file.txt', 'w') as data: 
+#     data.write(newL)
+

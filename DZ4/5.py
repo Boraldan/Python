@@ -30,30 +30,33 @@ else:
     n = 1
     print(n)
 
-while n > 1:
+count1 = 0
+count2 = 0
+
+while n > 0:
     for i1, el1 in enumerate(myL1):
         for i2, el2 in enumerate(myL2):
             if 'x**' + str(n) in el1 and 'x**' + str(n) in el2:
                     N1 = el1.find('x')
-                    A1 = int(el1[:N1-1])  # коофициент 
+                    A1 = int(el1[:N1-1])  
                     N2 = el2.find('x')
-                    A2 = int(el2[:N2-1])  # коофициент 
-                    temp = str(A1+A2) + '*x**' + str(n)
-                    n = n - 1
-                    myL1[i1] = temp
-                    # print(temp)
+                    A2 = int(el2[:N2-1]) 
+                    myL1[i1] = str(A1+A2) + '*x**' + str(n)
             elif el1[-1:] == 'x' and el2[-1:] == 'x':
                     N1 = el1.find('x')
-                    A1 = int(el1[:N1-1])  # коофициент 
+                    A1 = int(el1[:N1-1])  
                     N2 = el2.find('x')
-                    A2 = int(el2[:N2-1])  # коофициент 
+                    A2 = int(el2[:N2-1])   
                     temp = str(A1+A2) + '*x'
-                    myL1[i1] = temp
-                    # print(temp)
+                    if count1 == 0:
+                        myL1[i1] = temp
+                        count1 +=1
             elif  (el1.isdigit() and int(el1) > 0) and (el2.isdigit() and int(el2) > 0) :
                     temp = int(el1) + int(el2)
-                    myL1[i1] = str(temp)
-                    # print(temp)
+                    if count2 == 0:
+                        myL1[i1] = str(temp)
+                        count2 +=1
+    n = n - 1
 
 
 
