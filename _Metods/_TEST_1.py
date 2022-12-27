@@ -1,5 +1,3 @@
-# Даны два файла, в каждом из которых находится запись многочлена. 
-# Задача - сформировать файл, содержащий сумму многочленов.
 
 
 path = "DZ4\\task_5\\file1.txt"
@@ -17,8 +15,9 @@ data.close()
 print('Первый многочлен : ' + myL1)
 print('Второй многочлен : ' + myL2)
 
-myL1 = myL1.split()
+myL1 = myL1.split( )
 myL2 = myL2.split()
+
 
 if 'x**' in myL1[0]:
     N = myL1[0].find('x') + 2
@@ -56,14 +55,13 @@ while n > 1:
                     # print(temp)
 
 
+# myL1 = str(myL1)
+
+print(myL1)
 
 newL = ''
 
 for el in myL1:
     newL += str(el) + ' '
 
-print('Итоговый многочлен: ' + newL)
-
-with open('DZ4\\task_5\\task5_file.txt', 'w') as data: 
-    data.write(newL)
-
+print(newL)
