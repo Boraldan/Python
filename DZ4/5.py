@@ -20,12 +20,18 @@ print('Второй многочлен : ' + myL2)
 myL1 = myL1.split()
 myL2 = myL2.split()
 
-if 'x**' in myL1[0]:
-    N = myL1[0].find('x') + 2
-    t = myL1[0]       # выделяем отдельную переменную из списка
-    n = int(t[N+1:])  # степень 
-    A = int(t[:N-3])  # коофициент 
+if len(myL1) >= len(myL2):
+    max = myL1
+    min = myL2
+else:
+    max = myL2
+    min = myL1
 
+if 'x**' in max[0]:
+    N = max[0].find('x') + 2
+    t = max[0]       # выделяем отдельную переменную из списка
+    n = int(t[N+1:])  # степень 
+    # A = int(t[:N-3])  # коофициент 
 else:
     n = 1
     print(n)
@@ -34,14 +40,14 @@ count1 = 0
 count2 = 0
 
 while n > 0:
-    for i1, el1 in enumerate(myL1):
-        for i2, el2 in enumerate(myL2):
+    for i1, el1 in enumerate(max):
+        for i2, el2 in enumerate(min):
             if 'x**' + str(n) in el1 and 'x**' + str(n) in el2:
                     N1 = el1.find('x')
-                    A1 = int(el1[:N1-1])  
+                    A1 = int(el1[:N1-1])  # коофициент 
                     N2 = el2.find('x')
                     A2 = int(el2[:N2-1]) 
-                    myL1[i1] = str(A1+A2) + '*x**' + str(n)
+                    max[i1] = str(A1+A2) + '*x**' + str(n)
             elif el1[-1:] == 'x' and el2[-1:] == 'x':
                     N1 = el1.find('x')
                     A1 = int(el1[:N1-1])  
@@ -49,20 +55,18 @@ while n > 0:
                     A2 = int(el2[:N2-1])   
                     temp = str(A1+A2) + '*x'
                     if count1 == 0:
-                        myL1[i1] = temp
+                        max[i1] = temp
                         count1 +=1
             elif  (el1.isdigit() and int(el1) > 0) and (el2.isdigit() and int(el2) > 0) :
                     temp = int(el1) + int(el2)
                     if count2 == 0:
-                        myL1[i1] = str(temp)
+                        max[i1] = str(temp)
                         count2 +=1
     n = n - 1
 
-
-
 newL = ''
 
-for el in myL1:
+for el in max:
     newL += str(el) + ' '
 
 print('Итоговый многочлен: ' + newL)
