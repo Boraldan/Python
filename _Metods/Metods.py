@@ -1,4 +1,9 @@
-original = 2345                   инвертируем число 2345 в 5432
+
+import os  #  очистка consol
+os.system('cls||clear')
+
+# ---------------
+original = 2345                #   инвертируем число 2345 в 5432
 inverted = 0
 while original !=0:
     inverted = inverted * 10 + (original % 10)
@@ -14,7 +19,7 @@ def get_numbers(num):
     return my_list
 
 #  задать списко произвольный нужного размера --------------------
- def get_arr(num):              
+def get_arr(num):              
     my_L = []
     for i in range(num):
         my_L.append(random.randint(1,11))
