@@ -38,3 +38,29 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
+#  создание строки многочлена ------------------------------
+
+def polynomial_creation(degree):  # Функция создания многочлена
+    polynomial = [str(randint(0, 10)) + '*x^' + str(de) for de in range(degree, -1, -1)]
+    polynomial = [el for el in polynomial if el[0] != '0']
+    print(polynomial)
+    polynomial = ' + '.join(polynomial)
+    print(polynomial)
+    polynomial = polynomial.replace('*x^0', '').replace('^1', '') + ' = 0'
+    return polynomial
+# ------------------------------------------------------------
+
+import random
+
+k = int(input('Введите значение натуральной степени k: '))
+myL = [random.randint(0, 5) for i in range(k + 1)]
+print(myL)
+
+
+li = ' + '.join([f'{el}*x^{i+1}' for i, el in enumerate(myL[:-1]) if el != 0][::-1])
+print(li)
+if int(li[-1]) == 1:
+    li = li[:-2]
+li = li + ' + ' + str(random.randint(1, 100)) + ' = 0' 
+print(li)

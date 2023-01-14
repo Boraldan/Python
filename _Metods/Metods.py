@@ -57,3 +57,13 @@ def check_int():
     return int(num)
 
 print(check_int())
+
+# str  операции  -----------------
+
+st = 'x 1 g 2 w'
+st = st.replace('x', '').replace('w', '') 
+
+\
+li = ' + '.join([f'{el}*x^{i+1}' for i, el in enumerate(myL[:-1]) if el != 0][::-1])
+
+# ----------------
