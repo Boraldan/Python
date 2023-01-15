@@ -69,14 +69,14 @@ def PvComp_1(n, sp):  # Компьютер ходит первым
                 start += 1
                 pr_st = n % (sp + 1)
                 n -= pr_st
-                print(f'Компьютер взял {pr_st}. Осталось {n} конфе') 
+                print(f'Компьютер взял {pr_st}. Осталось {n} конфет') 
             else:
                 pr_co = sp - p + 1
                 n -= pr_co
                 if n <= 0:
                     print(f'Компьютер взял {pr_co} и ___ПОБЕДИЛ!___')
                     break
-                print(f'Компьютер взял {pr_co}. Осталось {n} конфе')            
+                print(f'Компьютер взял {pr_co}. Осталось {n} конфет')            
         co += 1    
 
 def PvComp_2(n, sp):   # компьютер ходит вторым
@@ -104,21 +104,21 @@ def PvComp_2(n, sp):   # компьютер ходит вторым
             if p < pr_st and start == 0:
                 start += 1
                 n -= pr_st - p
-                print(f'Компьютер взял {pr_st - p}. Осталось {n} конфе') 
+                print(f'Компьютер взял {pr_st - p}. Осталось {n} конфет') 
             elif p > pr_st and start == 0:
                 start += 1
                 n -= pr_st + sp + 1 - p
-                print(f'Компьютер взял {pr_st + sp + 1 - p}. Осталось {n} конфе') 
+                print(f'Компьютер взял {pr_st + sp + 1 - p}. Осталось {n} конфет') 
             elif p == pr_st and start == 0:
                 n -= sp + 1 - p
-                print(f'Компьютер взял {sp + 1 - p}. Осталось {n} конфе') 
+                print(f'Компьютер взял {sp + 1 - p}. Осталось {n} конфет') 
             else:
                 pr_co = sp - p + 1
                 n -= pr_co
                 if n <= 0:
                     print(f'Компьютер взял {pr_co} и ___ПОБЕДИЛ!___')
                     break
-                print(f'Компьютер взял {pr_co}. Осталось {n} конфе')      
+                print(f'Компьютер взял {pr_co}. Осталось {n} конфет')      
         print(' ') 
         co += 1    
 
@@ -129,7 +129,7 @@ def main():
     if game_whiht == 1:
         pvp(num, step)
     else:
-        game_whiht = int(input('Кто будет первым ходить? \nКомпьютер - введите [1]: \nЧеловек - введите [2]: \n'))
+        game_whiht = int(input('Кто будет ходить первым? \nКомпьютер - введите [1]: \nЧеловек - введите [2]: \n'))
         if game_whiht == 1:
             PvComp_1(num, step)
         else:
