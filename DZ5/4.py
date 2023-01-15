@@ -27,10 +27,21 @@ def unpack(res_in):
     return res_n
 
 def main():
-    my_st = 'aaaa1aaavvvvvvvvvvvveeeeeeeeeefrrrrooooo1ww'
+    st_in = 'aaaa1aaavvvvvggggggvvvvvvveeeeeeww'
+
+    with open('DZ5\\task4_in.txt', 'w') as data:   # закроет соединение автоматически с файлом
+        data.write(st_in)
+    with open('DZ5\\task4_in.txt', 'r') as data:    
+        my_st = data.readline()
     print(my_st)
     my_st = zip_st(my_st)
+    with open('DZ5\\task4_zip.txt', 'w') as data:   
+        data.write(my_st)
+    with open('DZ5\\task4_zip.txt', 'r') as data:    
+        my_st = data.readline()
     my_st = unpack(my_st)
+    with open('DZ5\\task4_unpack.txt', 'w') as data:   
+        data.write(my_st)
 
 
 if __name__ == "__main__":
