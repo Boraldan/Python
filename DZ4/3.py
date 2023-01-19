@@ -28,3 +28,16 @@ def main():
 if __name__ == "__main__":
 	main()
 
+# другой вариант решения задачи
+
+
+res = [random.randint(1, 7) for i in range(10)]
+print('Создаем список: ', res, '\n')
+
+res_1 = list(filter(lambda x: res.count(x) == 1, res))
+res_2 = [i for i in res if res.count(i) == 1]
+res_3 = list(set(res))
+
+print('Список уникальных элементов: ', res_1)
+print('Список уникальных элементов: ', res_2)
+print('Список уникальных элементов: ', res_3, '\n')

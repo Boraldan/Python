@@ -71,4 +71,16 @@ st = st.replace('x', '').replace('w', '')
 \
 li = ' + '.join([f'{el}*x^{i+1}' for i, el in enumerate(myL[:-1]) if el != 0][::-1])
 
-# ----------------
+#  удаление символов по краям строки ----------------
+
+str5 = '++++++Python Programming****** )$$$$$' 
+str6 = str5. strip ( ' $*+)' ) 
+print (str6) 
+
+# создание словаря повторяющихся элементов в списке  ------ 
+
+array = ["Bob", "Alex", "Bob", "John"]
+result = {i: array.count(i) for i in array}
+print(result)
+
+# -------------------

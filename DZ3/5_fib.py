@@ -18,3 +18,10 @@ for n in range(2, N+1):
 FinFib = negaFib + Fib
 
 print(f'{FinFib}')
+
+
+#  последовательность Фиббоначчи ниже
+# a, b = 0, 1
+# for i in range(8):
+#     a, b = a + b, a
+#     print(a, end=' ')

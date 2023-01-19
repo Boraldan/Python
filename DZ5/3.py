@@ -6,33 +6,27 @@ os.system('cls||clear')
 def game(li):
     x = 'X'
     x0 = '0'
-    co = 1
+    count = 1
     
-    while co < 10:
-        re = 0
-        if co%2:
+    def check(x, y, L):
+        while L[x-1][y-1] != '_':
+            print('ЭТА ЯЧЕЙКА ЗАНЯТА ----> Введите верную ячейку: ')     
+            x = int(input('Введите строку: '))
+            y = int(input('Введите столбец: '))
+        return x, y
+
+    while count < 10:
+        if count % 2:
             print('Ход игрока Х: ')     
             a = int(input('Введите строку: '))
             b = int(input('Введите столбец: '))
-            if li[a-1][b-1] != '_':
-                while re < 3:
-                    print('ЭТА ЯЧЕЙКА ЗАНЯТА ----> Введите верную ячейку: ')     
-                    a = int(input('Введите строку: '))
-                    b = int(input('Введите столбец: '))
-                    if li[a-1][b-1] == '_':
-                        break
+            a, b = check(a, b, li)
             li[a-1][b-1] = x
         else:
             print('Ход игрока 0: ')     
             a = int(input('Введите строку: '))
             b = int(input('Введите столбец: '))
-            if li[a-1][b-1] != '_':
-                while re < 3:
-                    print('ЭТА ЯЧЕЙКА ЗАНЯТА ----> Введите верную ячейку: ')     
-                    a = int(input('Введите строку: '))
-                    b = int(input('Введите столбец: '))
-                    if li[a-1][b-1] == '_':
-                        break
+            a, b = check(a, b, li)
             li[a-1][b-1] = x0
             
         for el in li:
@@ -56,10 +50,9 @@ def game(li):
         elif 'X' == li[0][0] == li[1][1] ==li[2][2] or 'X' == li[0][2] == li[1][1] ==li[2][0]:
             print('\n Победил игрок X\n __КОНЕЦ__')  #  по диагонали
             break
-        
-        
-        co += 1
-        if co == 10:
+                
+        count += 1
+        if count == 10:
             print('-------- НИЧЬЯ ---------')
         else:
             print('-----------------------')        

@@ -325,4 +325,41 @@ print((input()+'\n')*int(input()))
 \
 print('AAA\n'*6 + 'BBBB\n'*5 + 'E\n' + 'TTTTT\n'*9 + 'G')
 
-#--------------
+# переворачивание числа --------------
+
+num = int(input())
+res = 0
+while num != 0:
+    last_digit = num % 10
+    res += last_digit * (10**(len(str(num))-1))
+    # res = res*10 +last_digit                       или так
+    num = num // 10
+print(res)
+
+\
+print(input()[::-1])
+
+# последовательность цифр в числе на убывание проверяем  54321 -----
+
+num = int(input())
+last = num%10
+flag = True
+num = num // 10
+while num > 0:
+    last2 = num%10
+    if last > last2:
+        flag = False
+    last = last2
+    num = num // 10
+if flag == True:
+    print('YES')
+else:
+     print('NO')
+
+\
+n = int(input())
+while n % 10 <= n // 10 % 10:
+    n //= 10
+print('YES' if n < 10 else 'NO')
+
+# ------------------------------
