@@ -1,0 +1,6 @@
+<xml>
+    <first_name units = "fn">Сидорова</first_name>
+    <second_name units = "sn">Маша</second_name>
+    <phone units = "t">8913</phone>
+    <describe units = "d">да</describe>
+</xml>

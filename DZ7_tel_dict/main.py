@@ -22,12 +22,10 @@
 # - Можно ограничить формат документов использованием CSV
 # - можно предложить внедрить JSON, XML*
 
-import logger as lr
-import controller as cr
 
 import os  #  очистка consol
 os.system('cls||clear')
- 
+import controller as cr 
 
 
 cr.select()
