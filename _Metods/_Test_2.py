@@ -2,133 +2,22 @@ import os  #  очистка consol
 os.system('cls||clear')
 # ---------------------------
 
+a = 10
+b = 5
+st1 = 'gf'
+st2 = 'ae'
 
-import os
-os.system('cls||clear')
+di ={}
+print(di)
 
-def pvp(num, step):
-    re = 0
-    count = 1
-    while num > 0:
-        if count%2 != 0:
-            plr_step = int(input(f'Ход ПЕРВОГО игрока. Введите число от 1 до {step}: '))
-            if 1 > plr_step or plr_step > step:
-                while re < 3:
-                    print(f'Неверное число. Введите число от 1 до {step}: ')     
-                    plr_step = int(input(f'Ход ПЕРВОГО игрока. Введите число от 1 до {step}: '))
-                    if 0 < plr_step < step + 1:
-                        break
-            num -= plr_step
-            if num <= 0:
-                print('Победа первого игрока')
-                break
-            print(f'Осталось {num} конфет')
-        else:
-            plr_step = int(input(f'Ход ВТОРОГО игрока. Введите число от 1 до {step}: '))
-            if 1 > plr_step or plr_step > step:
-                while re < 3:
-                    print(f'Неверное число. Введите число от 1 до {step}: ')     
-                    plr_step = int(input(f'Ход ПЕРВОГО игрока. Введите число от 1 до {step}: '))
-                    if 0 < plr_step < step + 1:
-                        break
-            num -= plr_step
-            if num <= 0:
-                print('Победа второго игрока')
-                break
-            print(f'Осталось {num} конфет')
-        count += 1
+di2 ={}
+di3={}
 
-    print('------------Игра закончена----------------')
+di2[5] = st1
+print(di)
 
-def PvComp_1(num, step):  # Компьютер ходит первым
-    re = 0
-    count = 1
-    start_step = 0
-    while num > 0:
-        if count%2 == 0: 
-            plr_step = int(input(f'Ход ПЕРВОГО игрока. Введите число от 1 до {step}: '))
-            if 1 > plr_step or plr_step > step:
-                while re < 3:
-                    print(f'Неверное число. Введите число от 1 до {step}: ')     
-                    plr_step = int(input(f'Ход ПЕРВОГО игрока. Введите число от 1 до {step}: '))
-                    if 0 < plr_step < step + 1:
-                        break
-            num -= plr_step
-            if num <= 0:
-                print('Победа первого игрока')
-                break
-            print(f'Осталось {num} конфет')
-        else:
-            if start_step == 0:
-                start_step += 1
-                pr_st = num % (step + 1)
-                num -= pr_st
-                print(f'Компьютер взял {pr_st}. Осталось {num} конфет') 
-            else:
-                pr_co = step - plr_step + 1
-                num -= pr_co
-                if num <= 0:
-                    print(f'Компьютер взял {pr_co} и ___ПОБЕДИЛ!___')
-                    break
-                print(f'Компьютер взял {pr_co}. Осталось {num} конфет')            
-        count += 1    
+di3[7] = st2
+print(di)
 
-def PvComp_2(num, step):   # компьютер ходит вторым
-    
-    plr_fist = num % (step + 1)
-    re = 0
-    count = 1
-    flag_start = 0
-
-    while num > 0:
-        if count%2 != 0: 
-            plr_step = int(input(f'Ход ПЕРВОГО игрока. Введите число от 1 до {step}: '))
-            if 1 > plr_step or plr_step > step:
-                while re < 3:
-                    print(f'Неверное число. Введите число от 1 до {step}: ')     
-                    plr_step = int(input(f'Ход ПЕРВОГО игрока. Введите число от 1 до {step}: '))
-                    if 0 < plr_step < step + 1:
-                        break
-            num -= plr_step
-            if num <= 0:
-                print('Победа первого игрока')
-                break
-            print(f'Осталось {num} конфет')
-        else:
-            if plr_step < plr_fist and flag_start == 0:
-                flag_start += 1
-                num -= plr_fist - plr_step
-                print(f'Компьютер взял {plr_fist - plr_step}. Осталось {num} конфет') 
-            elif plr_step > plr_fist and flag_start == 0:
-                flag_start += 1
-                num -= plr_fist + step + 1 - plr_step
-                print(f'Компьютер взял {plr_fist + step + 1 - plr_step}. Осталось {num} конфет') 
-            elif plr_step == plr_fist and flag_start == 0:
-                num -= step + 1 - plr_step
-                print(f'Компьютер взял {step + 1 - plr_step}. Осталось {num} конфет') 
-            else:
-                plr_comp = step - plr_step + 1
-                num -= plr_comp
-                if num <= 0:
-                    print(f'Компьютер взял {plr_comp} и ___ПОБЕДИЛ!___')
-                    break
-                print(f'Компьютер взял {plr_comp}. Осталось {num} конфет')      
-        print(' ') 
-        count += 1    
-
-def main():
-    num = int(input('Введите число: '))
-    step = int(input('Введите шаг хода: '))
-    game_whiht = int(input('Введите с кем будите играть \nЧеловек против Человека - введите [1]: \nПротив Компьютера - введите [2]: \n'))
-    if game_whiht == 1:
-        pvp(num, step)
-    else:
-        game_whiht = int(input('Кто будет ходить первым? \nКомпьютер - введите [1]: \nЧеловек - введите [2]: \n'))
-        if game_whiht == 1:
-            PvComp_1(num, step)
-        else:
-            PvComp_2(num, step)
- 
-
-if __name__ == "__main__":
-	main()
+di = di2 + di3
+print(di)

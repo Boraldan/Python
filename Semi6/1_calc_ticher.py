@@ -1,3 +1,5 @@
+# Добавлена функция счета комплексных чисел
+
 def calc(my_list):
 
     while '*' in my_list or '/' in my_list:
@@ -24,7 +26,7 @@ def calc(my_list):
 
     return my_list
 
-s = '12*(10+12)*23/2*((34-2)+(56-23))'
+s = '(5*2+(2+5j))+(((5+5)*2+5)*2)'
 old_list = s.replace('+', ' + ')\
     .replace('-', ' - ')\
     .replace('*', ' * ')\
@@ -32,12 +34,14 @@ old_list = s.replace('+', ' + ')\
     .replace('(', '( ')\
     .replace(')', ' )').split()
 old_list = [int(elem) if elem.isdigit() else elem for elem in old_list]
+old_list = [complex(el) if 'j' in str(el)  else el for el in old_list]
+
 print(old_list)
 print('перевернутый список', old_list[::-1])
 
 while '(' in old_list:
     first_i = len(old_list) - old_list[::-1].index('(') - 1
-    second_i = first_i + old_list[first_i + 1:].index(')') + 1
+    second_i = first_i + old_list[first_i:].index(')')
 
     old_list = old_list[:first_i] + calc(old_list[first_i + 1:second_i]) + old_list[second_i+1:]
     print('текущее состояние выражения:', old_list)

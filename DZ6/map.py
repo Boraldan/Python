@@ -43,4 +43,4 @@ my_L = [float(random.randint(100, 999))/100 for _ in range(leng)]
 print(my_L)
 
 my_L = list(map(lambda x: x%1, my_L))
-print(f'Разница между {round(max(my_L), 2)} - {round(min(my_L), 2)}  = {round(max(my_L) - min(my_L), 3)}')
+print(f'Разница между {round(max(my_L), 2)} - {round(min(my_L), 2)}  = {round(max(my_L) - min(my_L), 2)}')

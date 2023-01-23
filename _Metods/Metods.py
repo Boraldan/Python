@@ -60,8 +60,10 @@ def check_int():
     while not num.isdigit():
         num = input("Введите верное число = ")
     return int(num)
-
 print(check_int())
+
+\
+while not (num.isdigit() or num[0] == '-' and  num[1:].isdegit()):
 
 # str  операции  -----------------
 
@@ -83,4 +85,15 @@ array = ["Bob", "Alex", "Bob", "John"]
 result = {i: array.count(i) for i in array}
 print(result)
 
-# -------------------
+# модуль подставляет время -------------------
+
+from datetime import datetime as dt
+time = dt.now().strftime('%H:%M:%S')
+print(time)
+
+#  преобразование строки в лист с комплексными числами ------------
+
+st = '8 + 12j + 9'.split()
+st = [int(el) if el.isdigit() else el for el in st]
+st = [complex(el) if 'j' in str(el)  else el for el in st]
+print(st)
