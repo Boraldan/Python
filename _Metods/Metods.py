@@ -63,7 +63,7 @@ def check_int():
 print(check_int())
 
 \
-while not (num.isdigit() or num[0] == '-' and  num[1:].isdegit()):
+while not (num.isdigit() or num[0] == '-' and  num[1:].isdigit()):
 
 # str  операции  -----------------
 
@@ -97,3 +97,61 @@ st = '8 + 12j + 9'.split()
 st = [int(el) if el.isdigit() else el for el in st]
 st = [complex(el) if 'j' in str(el)  else el for el in st]
 print(st)
+
+#  добавление к list разными способами --------
+new_list = []
+my_tuple = (1,2,3,4,5)
+my_list = [5,7,8,9,0]
+my_tuple_new = (11,22,33)
+
+new_list.extend(my_tuple)
+print(new_list)
+new_list += my_list
+print(new_list)
+new_list += 'wet'
+print(new_list)
+new_list.append(my_tuple)
+print(new_list)
+
+# присваивание значений переменным, если переменных не хватает --
+
+my_tuple = (1,2,3,4,5)
+my_list = [5,7,8,9,0]
+my_tuple_new = (11,22,33)
+my_list_new = [(11,22,33), (111,222,333), (1111,2222,3333)]
+el_1, el_2, el_3 = my_tuple_new
+print(el_1)
+print(el_2)
+print(el_3)
+
+for el_1, el_2, el_3 in my_list_new:
+    print(el_1, '----', el_2, '====', el_3)
+
+el_1, el_2, *el_3 = my_tuple
+print(el_1)
+print(el_2)
+print(el_3)
+print()
+
+#  считываем с файла TXTи записываем словари словарей{1 : { 1:2, 3:4}}   -- 
+
+import csv   
+di = {}
+with open('for_import.txt', encoding='utf-8') as file:
+    text = csv.reader(file, delimiter=',')   
+    for i, row in enumerate(text, start=1):
+        di[i] = dict(zip(row[1::2], row[2::2]))
+# запись
+st =''
+li = []
+for k in di:
+    st += str(k) +','
+    for k2, v in di[k].items():
+        st += str(k2)+',' + str(v) + ','
+    li.append(st.strip(","))
+    st =''
+with open('out_import.txt', mode="w", encoding='utf-8') as file:
+    for el in li:
+       file.write(el + '\n')
+
+# ------------------------------------------

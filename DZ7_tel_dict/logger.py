@@ -10,7 +10,7 @@ def view_all(): # 1
 def view_one(find): # 2
     with open('DZ7_tel_dict\\telbase.txt', mode="r", encoding='utf-8') as file:   
         data = csv.reader(file, delimiter=',')   
-        print('Фамилие Имя Телефон Описание')
+        print('Фамилия Имя Телефон Описание')
         flag = False
         find = find.strip(" ,")
         find = find.replace('  ', ' ').split() 

@@ -2,6 +2,7 @@
 import user_interfeice as ui
 import logger as lr
 
+
 def select():
     ui.menu()
     value = ui.enter('Введите номер запроса --->  ')

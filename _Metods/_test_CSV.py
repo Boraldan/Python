@@ -51,3 +51,14 @@ with open('Python1.csv', mode="a", encoding='utf-8') as w_file:
     file_writer.writerow(["Женя", "3", "10"])
     file_writer.writerow(["Саша", "5", "12"])
     file_writer.writerow(["Маша", 11, "18"])
+
+
+
+def process(lines):
+    for line in lines:
+        yield line.upper()
+
+    with open('for_import.csv', 'r', 'utf-8') as infile:
+        with codecs.open(file2, 'w', 'utf-8') as outfile:
+            for line in process(infile):
+                outfile.write(line)
