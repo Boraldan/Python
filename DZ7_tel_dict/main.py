@@ -23,6 +23,8 @@
 # - можно предложить внедрить JSON, XML*
 
 
+# для отображения пробуем   encoding='utf-8-sig'
+
 import os  #  очистка consol
 os.system('cls||clear')
 import controller as cr 

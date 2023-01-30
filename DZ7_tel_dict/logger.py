@@ -86,7 +86,7 @@ def import_base(): # 7
         data = csv.reader(file, delimiter=',')   
         for row in data:
             li_imp.append(row)
-
+        print(li_imp)
     with open('DZ7_tel_dict\\telbase.txt', mode="r", encoding='utf-8') as file:   
         data = csv.reader(file, delimiter=',')
         for row in data:

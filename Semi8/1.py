@@ -21,12 +21,6 @@
         
 #         Пример с лекции в файле Лекция 4.zip
 
-# ret = 'rt1'
-# rt2 = 'rt2'
-# dict1 = {ret : ['a1', 'a2', {rt2:[1,2,3]}]}
-
-# # all = dict1[ret].values()
-# print(dict1[ret].values())
 
 import os  #  очистка consol
 os.system('cls||clear')
@@ -37,4 +31,4 @@ os.system('cls||clear')
  
 di = {1:[1,2,3,4,5,{10:7, 8:10}, {6: 10} ]}
  
-print(di[1][5].keys())
+print(di[1])

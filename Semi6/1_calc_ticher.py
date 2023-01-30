@@ -26,13 +26,15 @@ def calc(my_list):
 
     return my_list
 
-s = '(5*2+(2+5j))+(((5+5)*2+5)*2)'
+# s = '(5*2+(2+5j))+(((5+5)*2+5)*2)'
+s= '5+5'
 old_list = s.replace('+', ' + ')\
     .replace('-', ' - ')\
     .replace('*', ' * ')\
     .replace('/', ' / ')\
     .replace('(', '( ')\
     .replace(')', ' )').split()
+
 old_list = [int(elem) if elem.isdigit() else elem for elem in old_list]
 old_list = [complex(el) if 'j' in str(el)  else el for el in old_list]
 
@@ -47,4 +49,4 @@ while '(' in old_list:
     print('текущее состояние выражения:', old_list)
 
 old_list = calc(old_list)
-print(*old_list)
+print(str(old_list[0]))
