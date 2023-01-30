@@ -22,7 +22,7 @@ async def hello(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(f'/hello\n/help\n/exo')
 
-app = ApplicationBuilder().token("5816495751:AAFsTEkFkFjI3najCAwEwm6CpowLQjb7sf4").build()
+app = ApplicationBuilder().token("     !!!!         ").build()
 
 app.add_handler(CommandHandler("hello", hello))
 app.add_handler(CommandHandler("help", help))

@@ -2,7 +2,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import bot_commands
 
 
-app = ApplicationBuilder().token("5816495751:AAFsTEkFkFjI3najCAwEwm6CpowLQjb7sf4").build()
+app = ApplicationBuilder().token("       !!!             ").build()
 
 print('Сервер запустился')
 

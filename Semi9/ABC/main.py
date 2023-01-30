@@ -16,7 +16,7 @@ async def wo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_text(f'{st}')
 
-app = ApplicationBuilder().token("5816495751:AAFsTEkFkFjI3najCAwEwm6CpowLQjb7sf4").build()
+app = ApplicationBuilder().token("        !!!!!!!!!!              ").build()
 
 print('start server')
 
