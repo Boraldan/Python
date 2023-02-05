@@ -57,14 +57,11 @@ def game(li):
         else:
             print('-----------------------')        
 
-
 def main():
-
     my_li = [['_','_','_'], ['_','_','_'], ['_','_','_']]
     for el in my_li:
             print(el[0] + ' | ' + el[1] + ' | ' + el[2])
     game(my_li)
     
-
 if __name__ == "__main__":
 	main()
