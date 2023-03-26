@@ -1,13 +1,3 @@
-# import os  #  очистка consol
-# os.system('cls||clear')
-# ---------------------------
-
-# text = '5+5'
-
-# if "+" in text or "-" in text or "*" in text or "/" in text:
-#     print(text)
-
-
 # Добавлена функция счета комплексных чисел
 
 def calc(my_list):

@@ -34,28 +34,55 @@ async def calc(update: Update, context: ContextTypes.DEFAULT_TYPE):
         + time.strftime('%d.%m.%y %H:%M:%S'))
     
     print(text)
-    
+
     text = text.replace('+', ' + ')\
         .replace('-', ' - ')\
         .replace('*', ' * ')\
         .replace('/', ' / ')\
-        .replace('(', '( ')\
-        .replace(')', ' )').split()
+        .replace('(', ' ( ')\
+        .replace(')', ' ) ').split()
+
+    print(text)
+
+    new_text = []
+    flag = True
+    count = 0
+
+    for i, el in enumerate(text):
+        if text[0].isdigit() or '(' in text[0]: 
+            if el.isdigit():
+                new_text.append(int(el))
+            elif 'j' in el:
+                new_text.append(complex(el))
+            elif (("+" in el or "-" in el or "*" in el or "/" in el) and (str(new_text[i-1])).isdigit()) \
+                or (("+" in el or "-" in el or "*" in el or "/" in el) and ')' in new_text[i-1]):
+                new_text.append(el)
+            elif "(" in el or ")" in el:
+                new_text.append(el)
+                count += 1
+            else:
+                flag = False
+                break
+        else:
+            flag = False
+            break
+
+    if count%2:
+        flag = False
+
     
-    print(text)    
-    # text = text[2:]
+    if flag:
+        while '(' in new_text:
+            first_i = len(new_text) - new_text[::-1].index('(') - 1
+            second_i = first_i + new_text[first_i:].index(')')
+            new_text = new_text[:first_i] + f_calc(new_text[first_i + 1:second_i]) + new_text[second_i+1:]
 
-    text = [int(elem) if elem.isdigit() else elem for elem in text]
-    text = [complex(el) if 'j' in str(el)  else el for el in text]
+        new_text = f_calc(new_text)
 
-    while '(' in text:
-        first_i = len(text) - text[::-1].index('(') - 1
-        second_i = first_i + text[first_i:].index(')')
-        text = text[:first_i] + f_calc(text[first_i + 1:second_i]) + text[second_i+1:]
+        lg.write_data(f'Отправлен ответ {str(new_text[0])} для {update.effective_user.first_name} '\
+        + time.strftime('%d.%m.%y %H:%M:%S'))
 
-    text = f_calc(text)
+        await update.message.reply_text(f'{str(new_text[0])}')
 
-    lg.write_data(f'Отправлен ответ {str(text[0])} для {update.effective_user.first_name} '\
-    + time.strftime('%d.%m.%y %H:%M:%S'))
-
-    await update.message.reply_text(f'{str(text[0])}')
+    else:
+        await update.message.reply_text(f'Такой пример {text} не могу решить.')
